@@ -1,1 +1,1 @@
-PATH=$PATH:~/src/board/
+PATH=$PATH:~/src/serfboard/
