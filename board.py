@@ -27,6 +27,7 @@ def init(args):
     templatesd = os.path.join(os.path.dirname(__file__), 'templates')
     shutil.copy(os.path.join(templatesd, 'board.json'), confd)
     shutil.copy(os.path.join(templatesd, 'handle.py'), confd)
+    os.chmod(os.path.join(templatesd, 'handle.py'), 0o744)
 
     print ("Done! You can start serf with -config-dir set to "
            "serf.conf.d that this script just created for you")

@@ -3,7 +3,7 @@
 import os
 import yaml
 import subprocess
-handlersd = os.path.abspath("../handlers")
+handlersd = os.path.abspath("handlers")
 plugins = os.listdir(handlersd)
 
 if os.environ["SERF_EVENT"] == "user":

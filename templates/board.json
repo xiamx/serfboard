@@ -1,5 +1,5 @@
 {
   "event_handlers": [
-    "handle.py"
+    "./serf.conf.d/handle.py"
   ]
 }
