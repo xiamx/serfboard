@@ -8,8 +8,8 @@ import subprocess
 import yaml
 
 
-confd = os.getcwd() + "/serf.conf.d"
-handlersd = os.getcwd() + '/handlers'
+confd = os.path.join(os.getcwd(), "serf.conf.d")
+handlersd = os.path.join(os.getcwd(), 'handlers')
 
 
 def init(args):
@@ -24,9 +24,9 @@ def init(args):
     os.mkdir(confd)
     os.mkdir(handlersd)
 
-    templatesd = os.path.dirname(__file__) + '/templates'
-    shutil.copy(templatesd + '/board.json', confd)
-    shutil.copy(templatesd + '/handle.py', confd)
+    templatesd = os.path.join(os.path.dirname(__file__), 'templates')
+    shutil.copy(os.path.join(templatesd, 'board.json'), confd)
+    shutil.copy(os.path.join(templatesd, 'handle.py'), confd)
 
     print ("Done! You can start serf with -config-dir set to "
            "serf.conf.d that this script just created for you")
@@ -36,12 +36,12 @@ def do_github_install(name):
     github_prefix = "https://github.com/"
     github_suffix = ".git"
     repo = github_prefix + name + github_suffix
-    localdir = handlersd + '/' + name
+    localdir = os.path.join(handlersd, name.replace('/', '-'))
     ret = subprocess.call(["git", "clone", repo, localdir])
 
     if ret == 0:
         print "Installed", name
-        with open(localdir + '/manifest.yaml', 'r') as f:
+        with open(os.path.join(localdir, 'manifest.yaml'), 'r') as f:
             mani = yaml.load(f)
             try:
                 for plugin, version in mani['dependencies'].iteritems():
