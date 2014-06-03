@@ -1,7 +1,11 @@
-# To develop locally
+# Serfboard
+
+A tool to manage serf event handlers
+
+## To develop locally
 
 
-## Initializing tools
+### Initializing tools
 
 ```bash
 
@@ -11,7 +15,7 @@ board.py init
 
 ```
 
-## Install boards(plugins)
+### Install boards(plugins)
 
 ```bash
 
@@ -21,7 +25,7 @@ board.py install $GITHUB_NAMESPACE/$GITHUB_REPO
 
 ```
 
-## Run serf
+### Run serf
 
 ```
 
