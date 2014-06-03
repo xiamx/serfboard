@@ -21,5 +21,13 @@ board.py install $GITHUB_NAMESPACE/$GITHUB_REPO
 
 ```
 
+## Run serf
+
+```
+
+serf agent -config-dir serf.conf.d
+
+```
+
 See https://github.com/xiamx/foo for an example of a board/plugin 
 
